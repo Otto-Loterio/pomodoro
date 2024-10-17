@@ -1,0 +1,168 @@
+html{
+    font-family: "Work Sans", sans-serif;
+        scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    background-color: rgba(255, 128, 106, 0.774);
+}
+
+header{
+    background-color: rgb(255, 134, 118);
+    display: flex;
+    padding-left: 100px;
+    padding-right: 100px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-header{
+    width: 25%;
+}
+
+.menu ul{
+
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+}
+
+.menu li a{
+    display: flex;
+    color:rgb(1, 170, 9);
+    text-decoration: none;
+    margin: 30px;
+    font-size: 35px;
+    align-items: center;
+}
+
+#introducao{
+    background-color: rgb(255, 120, 103);
+    color: rgb(0, 128, 0);
+    display: flex;
+    height: 350px;
+    align-items: center;
+    padding-top: -5px;
+    padding-bottom: 10px;
+}
+
+#introducao div{
+    width: 80%;
+    padding-right: 50px;
+    padding-left: 50px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.ciclo{
+    width: 90%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+#timer{
+    color: rgb(1, 170, 9);
+    width: 50%;
+    margin-top: 10px;
+    padding-right: 50px;
+    padding-left: 450px;
+}
+
+#cro{
+    width: 600px;
+    clear:both;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right:auto
+}
+
+.mybtn{
+    background-color: rgba(255, 128, 106, 0.774);
+    cursor: pointer;
+    font-size:25px;
+    clear:both;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+input{
+    background:rgba(255, 157, 139, 0.774);
+    width:600px;
+    height:200px;
+    line-height:200px;
+    font-size:150px;
+    border: none;
+    width: auto;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    padding-right: 500px;
+    padding-left: 0px;
+}   
+
+#topo{
+    height:50px;   
+    padding-top: 10px;
+    margin-bottom: 30px;
+    font-size: 20px
+}
+.title{
+    text-align:start;
+    padding-bottom: 5px;
+    font-size: 30px;
+    padding-right: 100x;
+    padding-left: -60px;
+}
+.para{
+    font-size: 20px;
+}
+
+#more-inf{
+    font-size: 3;
+    text-align:center;
+    margin-right: 60px;
+    padding-right: -60px;
+    padding-left: 60px;
+}
+
+.cere{
+    color:darkolivegreen;
+
+}
+
+.ori{
+    color: darkolivegreen;
+
+}
+
+.text-cere{
+    font-size: 80;
+}
+
+.coiso{
+    color: rgb(61, 7, 0);
+    font-size: 200%;
+}
+footer{
+    background-color:rgb(252, 81, 58);
+    color: rgb(46, 66, 13);
+    margin: 0;
+    text-align: center;
+    padding-top: 25px;
+}
+
+footer p{
+    background-color:rgb(252, 81, 58);
+    margin: 0;
+}
+
+.direitos-autorais{
+    background-color:rgb(252, 81, 58);
+    padding-top: 25px;
+    padding-bottom: 25px;
+}

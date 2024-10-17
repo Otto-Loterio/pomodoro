@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Técnica de Pomodoro</title>
+    <script type="text/javascript">
+        var tempo = 0; /* tempo */
+        var working = false; /* mostra se o timer tá ativo */
+        var intervaloID = 0; /*  identicação que permite resetalo */
+
+             /* mostra o tempo restante no cronometro */
+        function mostraTempo() {
+            let min = parseInt(tempo / 60);
+            let seg = tempo % 60;
+            let smin = min.toString().padStart(2, '0');
+            let sseg = seg.toString().padStart(2, '0');
+
+            /* deixa o cronometro em minuto:segundos */
+            let tempoTela = smin + ':' + sseg; 
+            document.querySelector(".cronometro").value = tempoTela;
+            
+                /* para o cronometro */
+            if (tempo <= 0) {
+                working = false;
+                clearInterval(intervaloID);
+                document.querySelector(".cronometro");
+
+                /* toca o alarme quando termina */
+                let alarme = document.getElementById("alarme"); 
+                alarme.play();
+            } else {
+                tempo--; /* fica diminuindo o tempo */
+            }
+        }
+
+            /* inicia o timer em 0 */
+        function temporizador(t) {
+            if (working == false) {
+                working = true;
+                tempo = t;
+                mostraTempo();
+                intervaloID = setInterval(mostraTempo, 1000);
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/pomodoro.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <audio id="alarme" src="sons/alarme.mp3"></audio>
+    <header>
+        <img class="logo-header" src="img/logo.png" alt="logo pomodoro site" />
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="#timer">Timer</a>
+                </li>
+                <li>
+                    <a href="#introducao">Início</a>
+                </li>
+                <li>
+                    <a href="#more-inf">Mais informações</a>
+                </li>
+                <li>
+                    <a href="#contato">Contato</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="timer">
+            <div class='container'>
+                <div id="topo">
+                    <h1 class="title">Timer técnica de Pomodoro</h1>
+                </div>
+                <div id="cro">
+                    <input type="text" class="cronometro" value="00:00" readonly />
+                </div><br />
+                <button class='mybtn' onclick="temporizador(1500)">25 minutos (trabalho focado) </button><br /> <!-- botões -->
+                <button class='mybtn zeb' onclick="temporizador(300)">5 minutos (pausa curta)</button><br />
+                <button class='mybtn' onclick="temporizador(900)">15 minutos (pausa longa)</button><br />
+            </div>
+        </section>
+        <section id="introducao">
+            <div>
+                <h1>
+                    Bem-vindo ao site técnica de Pomodoro
+                </h1>
+                <h1>
+                    O que é a técnica de Pomodoro?
+                </h1>
+                <p class="para">
+                    A técnica Pomodoro é um método de gestão do tempo
+                    que alterna períodos curtos de trabalho
+                    focado (25 minutos) com pausas breves (5 minutos)
+                    e pausas longas (15 minutos) para aumentar a produtividade.
+                </p>
+            </div>
+            <div>
+                <img class="ciclo" width="300px" src="./img/ciclo.jpg" alt="ciclo pomodoro" />
+            </div>
+        </section>
+        <div>
+            <section id="more-inf">
+                <div class="cere">
+                    <h1 class="coiso">Mais informações e perguntas frequentes</h1>
+                    <h2>como funciona a técnica de pomodoro no nosse cérebro?</h2>
+                
+                <p class="text-cere">
+                Ao completar um ciclo de Pomodoro, o cérebro libera dopamina, gerando
+                uma sensação de prazer e recompensa. Isso aumenta a motivação e reforça
+                o foco, criando um ciclo positivo que facilita a continuidade do trabalho.
+                </p>
+                </div>
+                <div class="ori">
+                    <h2>qual a origem da técnica de pomodoro?</h2>
+                    <p class="text-ori">
+                     A técnica de Pomodoro foi criada nos anos 1980 por Francesco
+                    Cirillo, que usou um cronômetro de cozinha em formato de tomate
+                    para gerenciar seu tempo de estudo. Ele desenvolveu o método
+                    para melhorar a produtividade, alternando períodos de 25 minutos
+                    de trabalho focado com pausas curtas de 5 minutos, ajudando a manter
+                    o foco e evitar a fadiga.
+                    </p>
+                <div>
+                    <h2>Quais são os benefícios da técnica de Pomodoro?</h2>
+                    <p>Ela contribui para elevar a eficiência ao aprimorar a concentração e minimizar interrupções. Ao realizar intervalos regulares, previne o cansaço mental, promovendo maior disposição e eficácia ao longo das atividades</p>
+                </div>
+                <div>
+                    <h2>É possível adaptar a técnica de Pomodoro para tarefas mais longas ou mais curtas?</h2>
+                    <p>A abordagem pode ser adaptada para atividades de maior ou menor duração, modificando os períodos de atividade e descanso conforme requerido, mantendo sempre a essência da alternância entre esforço e relaxamento.</p>
+                </div>
+                <div>
+                    <h2>A técnica de Pomodoro pode ser usada para qualquer tipo de tarefa?</h2>
+                    <p>A metodologia Pomodoro é adaptável e pode ser utilizada em uma variedade de atividades, abrangendo desde o aprendizado e o estudo até tarefas manuais ou criativas.</p>
+                </div>
+                <div>
+                    <h2>A técnica de Pomodoro pode melhorar a concentração e o foco?</h2>
+                    <p>Ao organizar as atividades em períodos breves e intensos, essa abordagem auxilia na manutenção da atenção e na redução de interrupções, estabelecendo uma rotina de concentração mais viável.</p>
+                </div>
+
+
+
+
+        </div>
+            </section>
+    </main>
+    <footer>
+        <section id="contato">
+            <h2>Contato</h2>
+        <div class="coiso2">
+            <p>Email: ottopequenostal@gmail.com</p>
+        </section>
+        <h3 class="direitos-autorais"> Concurso site - Pequenos talentos - Otto de Freitas Lotério</h3>
+        </div>
+    </footer>
+</body>
+
+</html>
